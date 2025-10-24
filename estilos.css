@@ -8,13 +8,15 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F5F5DC;
-    color: #333333;
+    background: linear-gradient(180deg, var(--primary), var(--secondary));
+    color: #ffffff;
+    cursor: url('IMG/34353.png'), auto;
+
 }
 
 h1, h2, h3, h4, h5, h6,
 button {
-    color: #D2691E;
+    color: #ffffff;
 }
 
 .site-header {
@@ -26,8 +28,51 @@ button {
   align-items: center;
   justify-content: space-between;
 }
+.main-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  transition: color 0.2s ease;
+  padding: 0.5rem 0;
+}
+.marca {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  margin-right: auto;
+}
 
 .site-logo img {
   display: block;
   max-height: 60px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.container2 {
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  max-width: 800px;       
+  margin: 0 auto;           
+}
+
+.imgcontainer {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.container2 .accent {
+  color: #af5f19;
 }
