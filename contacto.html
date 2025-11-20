@@ -1,217 +1,227 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tostadas Hidalgo — Contacto</title>
-  <link rel="icon" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Tostadas Hidalgo</title>
+    
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
 
-  <!-- Iconos (para Facebook y WhatsApp) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
 
-  <style>
-    :root {
-      --primary: #E67E22;
-      --secondary: #F4C542;
-      --accent: #2E7D32;
-      --dark: #5D4037;
-      --light: #FFF8F0;
-      --text: #2C2C2C;
-      --shadow: 0 6px 18px rgba(0,0,0,0.08);
-      --radius: 12px;
-      --container: 1100px;
-    }
+        .intro-text {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, Arial, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.5;
-      cursor: url('IMG/34353.png'), auto;
-    }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
 
-    /* HEADER */
-    .Logo {
-      text-align: center;
-      margin: 1rem 0;
-    }
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center; 
+        }
 
-    .Logo img {
-      max-width: 180px;
-      height: auto;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: inline-block;
-    }
+        .info-card h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
 
-    .Logo img:hover {
-      transform: scale(1.05);
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            text-align: left; 
+        }
 
-    header.site-header {
-      background: var(--primary);
-      color: white;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: var(--shadow);
-    }
+        .contact-details li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 1rem;
+            color: #555;
+            font-size: 1rem;
+        }
 
-    .brand {
-      font-weight: 700;
-      color: white;
-      text-decoration: none;
-      font-size: 1.4rem;
-    }
+        .contact-details i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 3px; 
+        }
 
-    .main-nav {
-      display: flex;
-      gap: 1.5rem;
-    }
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
 
-    .main-nav a {
-      text-decoration: none;
-      font-weight: 600;
-      color: white;
-      transition: color 0.2s ease;
-    }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.2s ease;
+        }
 
-    .main-nav a:hover {
-      color: var(--secondary);
-    }
+        .social-btn:hover {
+            transform: scale(1.02);
+        }
 
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.8rem;
-      color: white;
-      cursor: pointer;
-    }
+        .btn-face { background-color: #1877F2; }
+        .btn-whats { background-color: #25D366; }
 
-    /* CONTACTO */
-    .contacto {
-      padding: 3rem 1rem;
-      max-width: var(--container);
-      margin: 0 auto;
-      text-align: center;
-    }
+        .map-container {
+            width: 100%;
+            height: 450px; 
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid white;
+        }
 
-    .contacto h2 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
-    .contacto p {
-      font-size: 1rem;
-      color: var(--dark);
-      margin-bottom: 2rem;
-    }
+        .site-footer {
+            background-color: rgba(0,0,0,0.2);
+            padding: 2rem;
+            text-align: center;
+            margin-top: auto;
+            font-size: 0.9rem;
+            color: white;
+        }
 
-    .mapa {
-      margin-bottom: 2rem;
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: 0;
-    }
-
-    .redes {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    .redes a {
-      font-size: 2rem;
-      color: var(--primary);
-      transition: color 0.3s ease, transform 0.2s ease;
-    }
-
-    .redes a:hover {
-      color: var(--secondary);
-      transform: scale(1.2);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .main-nav {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        background: var(--primary);
-        position: absolute;
-        top: 100%;
-        right: 1rem;
-        padding: 1rem;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-      }
-
-      .main-nav.open {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-    }
-  </style>
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 2fr;
+            }
+            
+            .info-card {
+                text-align: left;
+                height: 450px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <a href="index.html">  <div class="Logo"><img src="IMG/logo.png" alt="Logo Tostadas Hidalgo"></div> </a>
-    <a class="brand" href="index.html">Tostadas Hidalgo</a>
-    <nav class="main-nav" id="mainNav">
-      <a href="index.html">Inicio</a>
-      <a href="productos.html">Productos</a>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="contacto.html">Contacto</a>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
-  </header>
+    <header class="site-header">
+        <a href="index.html" class="site-logo">
+            <img src="IMG/logo.png" alt="Logo de Tostadas Hidalgo">
+        </a>
+        
+        <a class="marca" href="index.html">Tostadas Hidalgo</a>
 
-  <!-- SECCIÓN CONTACTO -->
-  <section class="contacto" id="contacto">
-    <h2>Contáctanos</h2>
-    <p>Estamos para servirte. Encuéntranos en nuestra ubicación o escríbenos directamente.</p>
+        <nav class="main-nav" id="mainNav">
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="recetas.html">Recetas</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+        
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+    </header>
 
-    <div class="mapa">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245.02300991353727!2d-100.32043832349771!3d25.704640816346103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866295bb92f39d05%3A0x51416a0fc3183520!2sTostadas%20Hidalgo!5e0!3m2!1ses-419!2smx!4v1757565827927!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    <main class="contact-container">
+        
+        <h1 class="section-title">Contáctanos</h1>
+        <p class="intro-text">Estamos para servirte. Encuéntranos en nuestra ubicación o escríbenos directamente.</p>
 
-    <div class="redes">
-      <a href="https://www.facebook.com/Tostaditashidalgomty" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://wa.me/528119122560" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-  </section>
+        <div class="contact-grid">
+            
+            <section class="info-card">
+                <h3>Información</h3>
+                
+                <ul class="contact-details">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>
+                            <strong>Ubicación:</strong><br>
+                            Monterrey, Nuevo León.<br>
+                            (Cerca de Valle de Santa Lucía)
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>
+                            <strong>Teléfono / WhatsApp:</strong><br>
+                            (81) 1912-2560
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span>
+                            <strong>Horario:</strong><br>
+                            Lunes a Sábado: 9:00 AM - 6:00 PM
+                        </span>
+                    </li>
+                </ul>
 
-  <!-- SCRIPT DEL MENU -->
-  <script>
-    const navToggle = document.getElementById("navToggle");
-    const mainNav = document.getElementById("mainNav");
+                <div class="social-buttons">
+                    <a href="https://wa.me/528119122560" target="_blank" class="social-btn btn-whats">
+                        <i class="fab fa-whatsapp"></i> Enviar Mensaje
+                    </a>
+                    <a href="https://www.facebook.com/Tostaditashidalgomty" target="_blank" class="social-btn btn-face">
+                        <i class="fab fa-facebook"></i> Ver en Facebook
+                    </a>
+                </div>
+            </section>
 
-    navToggle.addEventListener("click", () => {
-      mainNav.classList.toggle("open");
-    });
-  </script>
+            <section class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245.02300991353727!2d-100.32043832349771!3d25.704640816346103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866295bb92f39d05%3A0x51416a0fc3183520!2sTostadas%20Hidalgo!5e0!3m2!1ses-419!2smx!4v1757565827927!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Tostadas Hidalgo. Todos los derechos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Hecho con sabor en Monterrey, N.L.</p>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        if(navToggle){
+            navToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+    </script>
+
 </body>
-
 </html>
-

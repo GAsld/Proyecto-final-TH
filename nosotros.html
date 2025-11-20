@@ -1,36 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Tostadas Hidalgo</title>
+    
     <link rel="stylesheet" href="estilos.css">
-    <title>Nosotros</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .history-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .history-text { flex: 1; }
+
+        .history-text h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .history-text p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .history-img {
+            flex: 1;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 10px 10px 0px rgba(230, 126, 34, 0.2); 
+            transform: rotate(2deg);
+        }
+
+        .mission-box {
+            background-color: #fff3e0;
+            border-left: 5px solid var(--primary);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 4rem; 
+        }
+
+        .mission-box h2 {
+            color: #d35400;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .mission-box p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        .process-section {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .process-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+            gap: 2rem;
+        }
+
+        .step-card {
+            flex: 1;
+            min-width: 200px; 
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .step-icon-circle {
+            width: 70px;
+            height: 70px;
+            background-color: var(--secondary); 
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            font-size: 1.8rem;
+            color: var(--dark); 
+        }
+
+        .step-card h3 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .step-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .site-footer {
+            background-color: rgba(0,0,0,0.2);
+            padding: 2rem;
+            text-align: center;
+            margin-top: auto;
+            font-size: 0.9rem;
+            color: white; 
+        }
+
+        @media (min-width: 768px) {
+            .history-section {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="site-header">
-      <a href="index.html" class="site-logo">
-        <img src="IMG/logo.png"  alt="Logo de Tostadas Hidalgo">
-      </a>
-      
-      <a class="marca" href="index.html">Tostadas Hidalgo</a>
 
-      <nav class="main-nav" id="mainNav">
-          <a href="productos.html">Productos</a>
-          <a href="nosotros.html">Nosotros</a>
-          <a href="recetas.html">Recetas</a>
-          <a href="contacto.html">Contacto</a>
-      </nav>
-      
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
-    
+    <header class="site-header">
+        <a href="index.html" class="site-logo">
+            <img src="IMG/logo.png" alt="Logo de Tostadas Hidalgo">
+        </a>
+        <a class="marca" href="index.html">Tostadas Hidalgo</a>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="recetas.html">Recetas</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+        
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
     </header>
 
-    <div class="container">
-        <h1>Nuestra Historia</h1>
-        <p>Tostadas Hidalgo nació en el corazón de Monterrey como un pequeño negocio familiar en 1985. Lo que comenzó como un sueño por compartir el auténtico sabor del maíz, se ha convertido en una tradición que perdura. Nuestra misión siempre ha sido la misma: llevar a tu hogar un producto de calidad inigualable, hecho con los mejores ingredientes y el mismo cariño de siempre.</p>
+    <main class="about-container">
         
-        <h2>Misión y Compromiso</h2>
-        <p>Nuestro compromiso es mantener la tradición y el sabor que nos caracteriza. En cada paso del proceso, desde la selección cuidadosa de cada grano de maíz hasta el horneado perfecto, ponemos toda nuestra dedicación para asegurar que cada tostada sea perfectamente crujiente y deliciosa. Gracias por dejarnos ser parte de tus comidas familiares y por confiar en la calidad que solo Tostadas Hidalgo puede ofrecer.</p>
-    </div>
+        <section class="history-section">
+            <div class="history-text">
+                <h1>Nuestra Historia</h1>
+                <p>
+                    Tostadas Hidalgo nació en el corazón de <strong>Monterrey</strong> como un pequeño negocio familiar en 1985. 
+                    Lo que comenzó como un sueño por compartir el auténtico sabor del maíz, se ha convertido en una tradición que perdura generación tras generación.
+                </p>
+                <p>
+                    Nuestra misión siempre ha sido la misma: llevar a tu hogar un producto de calidad inigualable, hecho con los mejores ingredientes y el mismo cariño de siempre.
+                </p>
+            </div>
+            
+            <img src="IMG/tostadaHidalgoRecreativa.jpg" alt="Inicios de Tostadas Hidalgo" class="history-img">
+        </section>
+
+        <section class="mission-box">
+            <h2>Misión y Compromiso</h2>
+            <p>
+                "Nuestro compromiso es mantener la tradición y el sabor que nos caracteriza. En cada paso del proceso, desde la selección cuidadosa de cada grano de maíz hasta el horneado perfecto, ponemos toda nuestra dedicación para asegurar que cada tostada sea perfectamente crujiente."
+            </p>
+        </section>
+
+        <section class="process-section">
+            <h2 class="process-title">¿Por qué nos eligen?</h2>
+            
+            <div class="process-steps">
+                
+                <div class="step-card">
+                    <div class="step-icon-circle">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Selección</h3>
+                    <p>Elegimos el mejor maíz de la región para garantizar calidad desde el origen.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon-circle">
+                        <i class="fas fa-mortar-pestle"></i>
+                    </div>
+                    <h3>Nixtamalización</h3>
+                    <p>Proceso tradicional que resalta el sabor auténtico y los nutrientes.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-icon-circle">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Calidad</h3>
+                    <p>Horneado y freído perfecto para lograr ese crujido inigualable.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Tostadas Hidalgo. Todos los derechos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Hecho con sabor en Monterrey, N.L.</p>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        if(navToggle){
+            navToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>

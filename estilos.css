@@ -1,47 +1,32 @@
+
 :root {
   --primary: #E67E22;
   --secondary: #F4C542;
+  --accent: #af5f19; 
   --shadow: 0 6px 18px rgba(0,0,0,0.08);
 }   
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(180deg, var(--primary), var(--secondary));
+    min-height: 100vh; 
     color: #ffffff;
     cursor: url('IMG/34353.png'), auto;
-
 }
 
-h1, h2, h3, h4, h5, h6,
-button {
-    color: #ffffff;
-}
+h1, h2, h3, h4, h5, h6 { color: #ffffff; }
+a { text-decoration: none; }
 
 .site-header {
-  background: var(--primary);
+  background: var(--primary); 
   color: white;
   box-shadow: var(--shadow);
   padding: 0.5rem 1rem;
-  display: flex;
+  display: flex; 
   align-items: center;
   justify-content: space-between;
-}
-.main-nav a {
-  text-decoration: none;
-  font-weight: 600;
-  color: white;
-  transition: color 0.2s ease;
-  padding: 0.5rem 0;
-}
-.marca {
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  font-size: 1.4rem;
-  margin-left: 1rem;
-  margin-right: auto;
 }
 
 .site-logo img {
@@ -49,30 +34,36 @@ button {
   max-height: 60px;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.container2 {
+.marca {
+  font-weight: 700;
   color: white;
-  padding: 3rem 1rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; 
-  max-width: 800px;       
-  margin: 0 auto;           
+  font-size: 1.4rem;
+  margin-left: 1rem;
+  margin-right: auto;
 }
 
-.imgcontainer {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 2rem;
+.main-nav a {
+  font-weight: 600;
+  color: white;
+  transition: color 0.2s ease;
+  padding: 0.5rem 1rem; 
 }
 
-.container2 .accent {
-  color: #af5f19;
+.main-nav a:hover {
+    background-color: rgba(255,255,255,0.2); 
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: white;
+    color: var(--primary);
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: transform 0.2s;
+}
+.btn:hover {
+    transform: scale(1.05);
 }

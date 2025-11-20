@@ -1,52 +1,267 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas | Tostadas Hidalgo</title>
+    
     <link rel="stylesheet" href="estilos.css">
-    <title>Recetas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .recipes-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .recipe-card {
+            background-color: white;
+            color: #333;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+        
+        .recipe-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .recipe-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .recipe-desc {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .tostada-tag {
+            margin-top: auto;
+            display: inline-block;
+            background-color: #fff3e0;
+            color: #e65100;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            align-self: flex-start;
+        }
+
+        .diy-banner {
+            background-color: white;
+            border-radius: 15px;
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-bottom: 5px solid var(--secondary);
+        }
+
+        .diy-banner h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .diy-banner p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 2rem;
+        }
+
+        .diy-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .diy-btn:hover {
+            background-color: #d35400;
+        }
+
+        .site-footer {
+            background-color: rgba(0,0,0,0.2);
+            padding: 2rem;
+            text-align: center;
+            margin-top: auto;
+            font-size: 0.9rem;
+            color: white;
+        }
+
+    </style>
 </head>
 <body>
-    <header class="site-header">
-      <a href="index.html" class="site-logo">
-        <img src="IMG/logo.png"  alt="Logo de Tostadas Hidalgo">
-      </a>
-      
-      <a class="marca" href="index.html">Tostadas Hidalgo</a>
 
-      <nav class="main-nav" id="mainNav">
-          <a href="productos.html">Productos</a>
-          <a href="nosotros.html">Nosotros</a>
-          <a href="recetas.html">Recetas</a>
-          <a href="contacto.html">Contacto</a>
-      </nav>
-      
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
-    
+    <header class="site-header">
+        <a href="index.html" class="site-logo">
+            <img src="IMG/logo.png" alt="Logo de Tostadas Hidalgo">
+        </a>
+        <a class="marca" href="index.html">Tostadas Hidalgo</a>
+
+        <nav class="main-nav" id="mainNav">
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="recetas.html">Recetas</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+        
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
     </header>
 
-    <div class="container">
-        <h1>Recetas para Inspirarte</h1>
-        <p>Nuestras tostadas son tan versátiles que puedes crear platillos increíbles. ¡Aquí te dejamos algunas ideas para que disfrutes al máximo su sabor y textura crujiente!</p>
-
-        <div class="container2">
-            <h3>Tostadas de Tinga de Pollo</h3>
-            <p>Un clásico que nunca falla. Sobre una <strong>Tostada Hidalgo Casera</strong>, coloca una generosa porción de tinga de pollo, y decora con crema, queso fresco, lechuga en tiras y tu salsa favorita.</p>
-        </div>
-
-        <hr>
-
-        <div class="container2">
-            <h3>Tostadas de Ceviche Fresco</h3>
-            <p>Perfectas para un día caluroso. Prepara tu ceviche de pescado o camarón favorito con limón, cilantro, jitomate y cebolla. Sírvelo sobre una <strong>Tostada Hidalgo Roja</strong> y acompaña con aguacate.</p>
-        </div>
+    <main class="recipes-container">
         
-        <hr>
+        <h1 class="section-title">Ideas para tu Cocina</h1>
+        <p class="intro-text">
+            Nuestras tostadas son tan versátiles que puedes crear platillos increíbles. 
+            ¡Aquí te dejamos algunas ideas para que te inspires y disfrutes su sabor crujiente en casa!
+        </p>
 
-        <div class="container2">
-            <h3>Guacamole y Frijoles con Tostadas Onduladas</h3>
-            <p>La botana ideal para compartir. La forma resistente de nuestras <strong>Tostadas Onduladas</strong> es perfecta para dipear en un guacamole recién hecho o unos deliciosos frijoles refritos con queso.</p>
+        <div class="recipes-grid">
+
+            <article class="recipe-card">
+                <img src="IMG/tostadaDeTinga.jpeg" alt="Tostada de tinga de pollo" class="recipe-img">
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Tostadas de Tinga</h3>
+                    <p class="recipe-desc">
+                        Un clásico que nunca falla. Una generosa porción de tinga de pollo, decorada con crema, queso fresco, lechuga y tu salsa favorita.
+                    </p>
+                    <span class="tostada-tag">Usa: Tostada Casera</span>
+                </div>
+            </article>
+
+            <article class="recipe-card">
+                <img src="IMG/tostadasDeCeviche.webp" alt="Tostada de ceviche fresco" class="recipe-img">
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Ceviche Fresco</h3>
+                    <p class="recipe-desc">
+                        Perfectas para el calor. Prepara tu ceviche de pescado o camarón con limón, cilantro, tomate y cebolla. Acompáñalo con aguacate.
+                    </p>
+                    <span class="tostada-tag">Usa: Tostada Roja</span>
+                </div>
+            </article>
+
+            <article class="recipe-card">
+                <img src="IMG/tostadaDipFrijoles.jpeg" alt="Dip de frijoles y guacamole" class="recipe-img">
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Dip de Frijoles</h3>
+                    <p class="recipe-desc">
+                        La botana ideal para compartir. La gran resistencia de nuestras Tostadas Caseras es perfecta para dipear en guacamole o frijoles refritos.
+                    </p>
+                    <span class="tostada-tag">Usa: Tostada Casera</span>
+                </div>
+            </article>
+
+            <article class="recipe-card">
+                <img src="IMG/tostadaPata.jpg" alt="Tostada de Pata" class="recipe-img">
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Tostadas de Pata</h3>
+                    <p class="recipe-desc">
+                        Un antojito tradicional. Patitas de cerdo en escabeche sobre una cama de frijoles, con mucha crema, queso y lechuga romana.
+                    </p>
+                    <span class="tostada-tag">Usa: Tostada Roja</span>
+                </div>
+            </article>
+
+            <article class="recipe-card">
+                <img src="IMG/tostadaSalpicon.jpeg" alt="Salpicón de Res" class="recipe-img">
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Salpicón de Res</h3>
+                    <p class="recipe-desc">
+                        Fresco y nutritivo. Carne de res deshebrada fría, mezclada con tomate, cebolla, cilantro y cubitos de aguacate.
+                    </p>
+                    <span class="tostada-tag">Usa: Tostada Casera</span>
+                </div>
+            </article>
+
+            <article class="recipe-card">
+                <img src="IMG/tostadaPicadillo.jpg" alt="Tostada de Picadillo" class="recipe-img">
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Tostadas de Picadillo</h3>
+                    <p class="recipe-desc">
+                        El sabor de hogar. Picadillo de carne molida con papas y zanahoria. El toque de chile de la tostada roja realza el sabor del guiso.
+                    </p>
+                    <span class="tostada-tag">Usa: Tostada Roja</span>
+                </div>
+            </article>
+
         </div>
-    </div>
+
+        <section class="diy-banner">
+            <h2>¡Ponle tu sazón!</h2>
+            <p>
+                Recuerda que en <strong>Tostadas Hidalgo</strong> ponemos el crujido y la tradición, tú pones el guiso.
+                <br>Encuentra nuestros paquetes en tu tienda más cercana.
+            </p>
+            
+            <a href="contacto.html" class="diy-btn">
+                <i class="fas fa-map-marker-alt"></i> Ver Puntos de Venta
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Tostadas Hidalgo. Todos los derechos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Hecho con sabor en Monterrey, N.L.</p>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        if(navToggle){
+            navToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+    </script>
+
 </body>
 </html>

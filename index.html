@@ -1,46 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tostadas Hidalgo</title>
+    <title>Tostadas Hidalgo | Inicio</title>
+    
     <link rel="stylesheet" href="estilos.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .hero-layout {
+            padding: 4rem 1rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .text-accent {
+            color: var(--accent); 
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.4);
+        }
+
+        .features-section {
+            padding: 2rem 0 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.15); 
+            padding: 2rem;
+            border-radius: 15px;
+            color: white;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white; 
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .site-footer {
+            background-color: rgba(0,0,0,0.2);
+            padding: 2rem;
+            text-align: center;
+            margin-top: auto; 
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-layout {
+                flex-direction: row;
+                text-align: left;
+                gap: 3rem;
+                padding: 6rem 1rem; 
+            }
+            .hero-image {
+                max-width: 45%; 
+                margin-bottom: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header class="site-header">
-      <a href="index.html" class="site-logo">
-        <img src="IMG/logo.png"  alt="Logo de Tostadas Hidalgo">
-      </a>
-      
-      <a class="marca" href="index.html">Tostadas Hidalgo</a>
+        <a href="index.html" class="site-logo">
+            <img src="IMG/logo.png" alt="Logo Tostadas Hidalgo">
+        </a>
+        <a class="marca" href="index.html">Tostadas Hidalgo</a>
 
-      <nav class="main-nav" id="mainNav">
-          <a href="productos.html">Productos</a>
-          <a href="nosotros.html">Nosotros</a>
-          <a href="recetas.html">Recetas</a>
-          <a href="contacto.html">Contacto</a>
-      </nav>
-      
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
-    
+        <nav class="main-nav" id="mainNav">
+            <a href="productos.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="recetas.html">Recetas</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
     </header>
 
-      <div class="container">
-
-          <div class="container2">
-          <img src="IMG/tostadas hidalgo todas.png" width="600" height="800" alt="Variedad de Tostadas Hidalgo" class="imgcontainer">
-          
-          <div class="container2">          
-          <h1>Las mejores <span class="accent">tostadas</span> de la región</h1>
-          <p>Receta familiar, ingredientes locales y el toque crujiente que te hace volver.</p>
-          <a class="btn primary" href="productos.html">Ver productos</a>
-        </div>
-
+    <main class="main-container">
         
-        </div>
-      </div>
+        <section class="hero-layout">
+            <img src="IMG/tostadasHidalgoTodas.png" alt="Variedad de tostadas" class="hero-image">
+            
+            <div class="hero-text">          
+                <h1>Las mejores <span class="text-accent">tostadas</span> de la región</h1>
+                <p>Receta familiar, ingredientes locales y el toque crujiente que te hace volver.</p>
+                <br>
+                <a class="btn" href="productos.html">Ver productos</a>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="features-grid">
+                
+                <div class="feature-card">
+                    <i class="fas fa-wheat-awn feature-icon"></i> <h3>100% Maíz Natural</h3>
+                    <p>Seleccionamos el mejor grano para garantizar el sabor auténtico.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-fire-burner feature-icon"></i> <h3>Siempre Crujientes</h3>
+                    <p>Nuestro proceso de horneado único mantiene la textura perfecta.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-heart feature-icon"></i> <h3>Tradición Regia</h3>
+                    <p>Hechas en Monterrey con la receta familiar desde 1985.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Tostadas Hidalgo. Todos los derechos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Hecho con sabor en Monterrey, N.L.</p>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        if(navToggle){
+            navToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+    </script>
 
 </body>
 </html>
-
