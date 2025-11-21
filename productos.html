@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <style>
+       
         .products-container {
             max-width: 1100px;
             margin: 0 auto;
@@ -33,7 +34,7 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 2rem;
             justify-items: center;
-            margin-bottom: 4rem;
+            margin-bottom: 4rem; 
         }
 
         .product-card {
@@ -55,6 +56,7 @@
             background-color: rgba(255, 255, 255, 0.25);
         }
 
+        
         .product-badge {
             position: absolute;
             top: -10px;
@@ -108,12 +110,85 @@
             color: var(--primary);
         }
 
+        .calculator-section {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            margin: 4rem auto;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(230, 126, 34, 0.15);
+        }
+
+        .calculator-section h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .calc-input-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        #invitadosInput {
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            width: 200px;
+            text-align: center;
+        }
+
+        .calc-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .calc-btn:hover {
+            background-color: #d35400;
+        }
+
+        #resultadoCalc {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            display: none; 
+            border: 1px dashed var(--primary);
+        }
+
+        #resultadoCalc h3 {
+            color: var(--dark);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .numero-grande {
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: bold;
+            display: block;
+            margin: 10px 0;
+        }
+
         .wholesale-section {
             background-color: white;
             color: #333;
             border-radius: 15px;
             padding: 3rem 1rem;
-            margin-top: 2rem;
+            margin-top: 4rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
@@ -125,7 +200,7 @@
 
         .wholesale-btn {
             display: inline-block;
-            background-color: #25D366;
+            background-color: #25D366; 
             color: white;
             padding: 12px 30px;
             border-radius: 30px;
@@ -180,7 +255,6 @@
 
             <article class="product-card">
                 <div class="product-badge">¡Las Favoritas!</div>
-
                 <img src="IMG/rojas50pz.png" alt="Paquete de Tostadas Rojas" class="product-image">
                 <div class="product-info">
                     <h3>Tostadas Rojas</h3>
@@ -191,7 +265,6 @@
 
             <article class="product-card">
                 <div class="product-badge badge-yellow">Tradicional</div>
-
                 <img src="IMG/amarillas50pz.png" alt="Paquete de Tostadas Caseras" class="product-image">
                 <div class="product-info">
                     <h3>Tostadas Caseras</h3>
@@ -201,6 +274,25 @@
             </article>
 
         </div>
+
+        <section class="calculator-section">
+            <h2>🎉 ¿Tienes fiesta? ¡Calcula cuántas necesitas!</h2>
+            <p style="margin-bottom: 20px; color: #666;">
+                No te quedes corto ni compres de más. Dinos cuántos invitados tienes y te diremos cuántos paquetes llevar.
+            </p>
+            
+            <div class="calc-input-group">
+                <input type="number" id="invitadosInput" placeholder="Número de personas" min="1">
+                <button onclick="calcularPaquetes()" class="calc-btn">Calcular</button>
+            </div>
+
+            <div id="resultadoCalc">
+                <p style="color: #555; font-weight: bold;">Para que nadie se quede con hambre, compra:</p>
+                <span id="paquetesNumero" class="numero-grande">0</span>
+                <h3 id="textoPaquetes">Paquetes</h3>
+                <p style="font-size: 0.9rem; color: #888;">(Calculando aprox. 4 tostadas por persona)</p>
+            </div>
+        </section>
 
         <section class="wholesale-section">
             <h2>¿Tienes una tienda o negocio?</h2>
@@ -225,6 +317,37 @@
             navToggle.addEventListener('click', () => {
                 mainNav.classList.toggle('active');
             });
+        }
+
+        function calcularPaquetes() {
+            const input = document.getElementById('invitadosInput');
+            const resultadoDiv = document.getElementById('resultadoCalc');
+            const numeroSpan = document.getElementById('paquetesNumero');
+            const textoH3 = document.getElementById('textoPaquetes');
+            
+            const invitados = parseInt(input.value);
+
+            if (!invitados || invitados <= 0) {
+                alert("Por favor, ingresa un número válido de invitados.");
+                return;
+            }
+
+            const tostadasPorPersona = 4;
+            const totalTostadas = invitados * tostadasPorPersona;
+            
+            const piezasPorPaquete = 50;
+            
+            const paquetesNecesarios = Math.ceil(totalTostadas / piezasPorPaquete);
+
+            numeroSpan.textContent = paquetesNecesarios;
+            
+            if(paquetesNecesarios === 1){
+                textoH3.textContent = "Paquete de 50 pz";
+            } else {
+                textoH3.textContent = "Paquetes de 50 pz";
+            }
+
+            resultadoDiv.style.display = 'block';
         }
     </script>
 </body>

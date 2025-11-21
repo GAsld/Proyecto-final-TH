@@ -6,7 +6,6 @@
     <title>Tostadas Hidalgo | Inicio</title>
     
     <link rel="stylesheet" href="estilos.css">
-    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <style>
@@ -56,7 +55,7 @@
         }
 
         .feature-card {
-            background-color: rgba(255, 255, 255, 0.15); 
+            background-color: rgba(255, 255, 255, 0.15);
             padding: 2rem;
             border-radius: 15px;
             color: white;
@@ -72,7 +71,7 @@
         .feature-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            color: white; 
+            color: white;
         }
 
         .feature-card h3 {
@@ -80,12 +79,92 @@
             font-size: 1.3rem;
         }
 
+        .newsletter-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 4rem auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 800px;
+        }
+
+        .newsletter-section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-section p {
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #emailInput {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 400px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #emailInput:focus {
+            border-color: var(--primary);
+        }
+
+        .btn-submit {
+            background-color: var(--secondary);
+            color: #333;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #f9a825;
+            transform: scale(1.05);
+        }
+
+        #mensajeAlerta {
+            margin-top: 1.5rem;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .exito {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
         .site-footer {
             background-color: rgba(0,0,0,0.2);
             padding: 2rem;
             text-align: center;
-            margin-top: auto; 
+            margin-top: auto;
             font-size: 0.9rem;
+            color: white; 
         }
 
         @media (min-width: 768px) {
@@ -93,11 +172,70 @@
                 flex-direction: row;
                 text-align: left;
                 gap: 3rem;
-                padding: 6rem 1rem; 
+                padding: 6rem 1rem;
             }
             .hero-image {
                 max-width: 45%; 
                 margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            
+            h1 { font-size: 2.2rem !important; }
+            h2 { font-size: 1.8rem !important; }
+            p { font-size: 1rem !important; }
+
+            .newsletter-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1rem;
+                background-color: white !important;
+                border-radius: 20px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2); 
+            }
+
+            .newsletter-section h2 {
+                color: var(--primary) !important; 
+                text-shadow: none !important;
+                margin-bottom: 0.5rem;
+            }
+            
+            .newsletter-section p {
+                color: #666 !important;
+                margin-bottom: 1.5rem;
+            }
+
+            .form-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                width: 100%;
+            }
+
+            #emailInput {
+                width: 100%;
+                max-width: 100%;
+                padding: 15px;
+                border: 2px solid #eee;
+                border-radius: 50px;
+                background-color: #f9f9f9;
+                font-size: 1rem;
+                outline: none;
+            }
+
+            .btn-submit {
+                width: 100%;
+                max-width: 100%;
+                padding: 15px;
+                background-color: var(--secondary) !important; 
+                color: #333 !important;
+                border: none;
+                border-radius: 50px;
+                font-weight: bold;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                cursor: pointer;
+                box-shadow: 0 4px 10px rgba(244, 197, 66, 0.4);
             }
         }
     </style>
@@ -124,7 +262,6 @@
         
         <section class="hero-layout">
             <img src="IMG/tostadasHidalgoTodas.png" alt="Variedad de tostadas" class="hero-image">
-            
             <div class="hero-text">          
                 <h1>Las mejores <span class="text-accent">tostadas</span> de la región</h1>
                 <p>Receta familiar, ingredientes locales y el toque crujiente que te hace volver.</p>
@@ -135,23 +272,34 @@
 
         <section class="features-section">
             <div class="features-grid">
-                
                 <div class="feature-card">
-                    <i class="fas fa-wheat-awn feature-icon"></i> <h3>100% Maíz Natural</h3>
+                    <i class="fas fa-wheat-awn feature-icon"></i>
+                    <h3>100% Maíz Natural</h3>
                     <p>Seleccionamos el mejor grano para garantizar el sabor auténtico.</p>
                 </div>
-
                 <div class="feature-card">
-                    <i class="fas fa-fire-burner feature-icon"></i> <h3>Siempre Crujientes</h3>
+                    <i class="fas fa-fire-burner feature-icon"></i>
+                    <h3>Siempre Crujientes</h3>
                     <p>Nuestro proceso de horneado único mantiene la textura perfecta.</p>
                 </div>
-
                 <div class="feature-card">
-                    <i class="fas fa-heart feature-icon"></i> <h3>Tradición Regia</h3>
+                    <i class="fas fa-heart feature-icon"></i>
+                    <h3>Tradición Regia</h3>
                     <p>Hechas en Monterrey con la receta familiar desde 1985.</p>
                 </div>
-
             </div>
+        </section>
+
+        <section class="newsletter-section">
+            <h2>¡No te pierdas nuestras promociones!</h2>
+            <p>Suscríbete para recibir ofertas especiales y noticias sobre nuevos productos de Tostadas Hidalgo.</p>
+            
+            <form id="newsletterForm" class="form-group">
+                <input type="email" id="emailInput" placeholder="Escribe tu correo electrónico..." required>
+                <button type="submit" class="btn-submit">Suscribirme</button>
+            </form>
+
+            <div id="mensajeAlerta"></div>
         </section>
 
     </main>
@@ -167,6 +315,33 @@
         if(navToggle){
             navToggle.addEventListener('click', () => {
                 mainNav.classList.toggle('active');
+            });
+        }
+
+        const form = document.getElementById('newsletterForm');
+        const emailInput = document.getElementById('emailInput');
+        const mensajeAlerta = document.getElementById('mensajeAlerta');
+
+        if(form){
+            form.addEventListener('submit', function(evento) {
+                evento.preventDefault(); 
+
+                const correo = emailInput.value;
+
+                if (correo.length > 0) {
+                    mensajeAlerta.textContent = `¡Gracias! Hemos registrado ${correo} correctamente.`;
+                    mensajeAlerta.className = 'exito';
+                    mensajeAlerta.style.display = 'block';
+                    emailInput.value = '';
+
+                    setTimeout(() => {
+                        mensajeAlerta.style.display = 'none';
+                    }, 5000);
+                } else {
+                    mensajeAlerta.textContent = 'Por favor, escribe un correo válido.';
+                    mensajeAlerta.className = 'error';
+                    mensajeAlerta.style.display = 'block';
+                }
             });
         }
     </script>
