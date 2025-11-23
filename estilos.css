@@ -1,4 +1,3 @@
-
 :root {
   --primary: #E67E22;
   --secondary: #F4C542;
@@ -7,7 +6,7 @@
 }   
 
 html {
-    font-size: 130%; 
+    font-size: 120%; 
 }
 
 h1 { font-size: 3.5rem; } 
@@ -125,4 +124,29 @@ a { text-decoration: none; }
     .site-header {
         position: relative; 
     }
+
+} 
+
+
+#btnArriba {
+    display: none; 
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    z-index: 9999; 
+    border: none;
+    outline: none;
+    background-color: var(--primary); 
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; 
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#btnArriba:hover {
+    background-color: var(--secondary);
+    transform: scale(1.1); 
 }

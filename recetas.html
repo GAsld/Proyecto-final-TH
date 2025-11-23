@@ -249,6 +249,10 @@
 
     </main>
 
+    <button onclick="topFunction()" id="btnArriba" title="Ir arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <footer class="site-footer">
         <p>&copy; 2025 Tostadas Hidalgo. Todos los derechos reservados.</p>
         <p style="font-size: 0.8rem; margin-top: 5px;">Hecho con sabor en Monterrey, N.L.</p>
@@ -261,6 +265,25 @@
             navToggle.addEventListener('click', () => {
                 mainNav.classList.toggle('active');
             });
+        }
+
+        const botonArriba = document.getElementById("btnArriba");
+
+        window.onscroll = function() { mostrarBotonScroll() };
+
+        function mostrarBotonScroll() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            botonArriba.style.display = "block";
+        } else {
+            botonArriba.style.display = "none";
+        }
+        }
+
+        function topFunction() {
+            window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
         }
     </script>
 
